@@ -5,7 +5,7 @@ set -e
 GRADLE_VERSION="8.12.1"
 
 INSTALL_JDK=""
-POSITIONAL=() # unused structure
+POSITIONAL="" #() # unused structure
 while [ $# -gt 0 ]; do
 	case "$1" in
     -h | --help )
@@ -28,7 +28,7 @@ while [ $# -gt 0 ]; do
 			echo "Illegal option $1"
 			;;
     * )
-      POSITIONAL+=("$1")
+      POSITIONAL+=$1 #("$1")
       shift
       ;;
 	esac
